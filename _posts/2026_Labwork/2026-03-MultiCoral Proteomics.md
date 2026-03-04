@@ -65,7 +65,25 @@ PepMap <- find.peptide(data = newtablefrom3, protein_sequence = ProtCol, peptide
 15. 30%, 40% fail even with -n = 2
 
 
-#20260301
+#20260302
 1. Pull all contatonated pseudoproteins (with x's) that cluster to at least 2 sequences. Yields 37 clusters of 501 sequences.
 
 2. Blast2GO: blastp_fast, nr, no filter, e^-10
+
+
+#20260303
+1. 500 sequences fuly ran through blast-p in Blast2GO. 1 sequence didn't run = 9298 aa long
+
+2. Run Interpro scan
+
+
+#20260304
+1. Merge IntroPro scan to Annotation
+
+2. Map GO terms with default
+
+3. Run Annotation with defaults, e^-6
+
+4. Save output as .b2g and export as. txt
+
+5. Reblast missing long Pdam sequence - still fails. Blast-p in NCBI. Had GO terms from first Blast2GO run.
