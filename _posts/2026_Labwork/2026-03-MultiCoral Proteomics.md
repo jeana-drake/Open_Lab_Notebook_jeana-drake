@@ -87,3 +87,11 @@ PepMap <- find.peptide(data = newtablefrom3, protein_sequence = ProtCol, peptide
 4. Save output as .b2g and export as. txt
 
 5. Reblast missing long Pdam sequence - still fails. Blast-p in NCBI. Had GO terms from first Blast2GO run.
+
+
+#20260305, 20260306
+1. MSA on clusters 0, 6, 8, 11, 12
+
+2. ClustalO online
+
+3. Split clusters 6, 8, 11 into 1-60 aa, 61-120 aa, and >120 aa lengths for alignment
