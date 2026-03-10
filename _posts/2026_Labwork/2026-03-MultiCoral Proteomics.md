@@ -65,19 +65,19 @@ PepMap <- find.peptide(data = newtablefrom3, protein_sequence = ProtCol, peptide
 15. 30%, 40% fail even with -n = 2
 
 
-#20260302
+### 20260302
 1. Pull all contatonated pseudoproteins (with x's) that cluster to at least 2 sequences. Yields 37 clusters of 501 sequences.
 
 2. Blast2GO: blastp_fast, nr, no filter, e^-10
 
 
-#20260303
+### 20260303
 1. 500 sequences fuly ran through blast-p in Blast2GO. 1 sequence didn't run = 9298 aa long
 
 2. Run Interpro scan
 
 
-#20260304
+### 20260304
 1. Merge IntroPro scan to Annotation
 
 2. Map GO terms with default
@@ -89,9 +89,24 @@ PepMap <- find.peptide(data = newtablefrom3, protein_sequence = ProtCol, peptide
 5. Reblast missing long Pdam sequence - still fails. Blast-p in NCBI. Had GO terms from first Blast2GO run.
 
 
-#20260305, 20260306
+### 20260305, 20260306
 1. MSA on clusters 0, 6, 8, 11, 12
 
 2. ClustalO online
 
 3. Split clusters 6, 8, 11 into 1-60 aa, 61-120 aa, and >120 aa lengths for alignment
+
+
+### 20260309
+1. Convert Pocillopora grandis genome in NCBI [GCA_96402706.2](https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_964027065.2/) .fna file to predicted protein file in Galaxy. No predicted protein file in NCBI.
+
+2. Predicted protein file for model file:
+      a. P. damicornis genome file ([GCF_003804095.1[(https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_003704095.1/), from RSMAS) has too-low scaffold N50 and too-high scaffold L50.
+     b. P. verrucosa genome file ([GCF_036669915.1](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_036669915.1/), State Key Lab for Bioelectronics) has good scaffold N50 and L50. Use this one.
+     c. Pver has only 84 proteins in UniProt; Pdam has 30k proteins in UniProt but is based on RSMAS genome above.
+
+3. Run Pgrand .fna file in Braker3 in Galaxy using Pver NCBI predicted protein file as a guide.
+
+4. Pocillopora tuahiniensis is sister to P. verrucosa but is in a different clade than P. meandrina [Johnston & Burgess 2023 Zootaxa](https://mapress.com/zt/article/view/zootaxa.5369.1.5).
+
+5. Checked NCBI, reefgenomics.org, marinegenomics.oist.jp, and Google Scholar for P. tuahiniensis genome or transcriptome. None found. Must combine P. dam, P. ver, P. acuta, P. grandis, and P. meandrina predicted protein files.
