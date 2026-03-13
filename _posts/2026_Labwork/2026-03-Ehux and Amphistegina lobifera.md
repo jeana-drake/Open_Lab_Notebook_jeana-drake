@@ -32,3 +32,11 @@
 3. Run 3 of missing sequences with Blast2GO hits in NCBI, blastp_nr, against Homo sapiens
 
 4. Yiels 269 non-contaminant coccolith proteins.
+
+
+# 20260313
+1. Pull [Skeffington 2023 Nature Communications](https://www.nature.com/articles/s41467-023-39336-1) coccolith, vesicle, and coccosphere proteins from Supplementary Documents SI 2, 3, 4
+
+2. Blast-p in NCBI: Prada Ehux lith proteins against three Skeffington SI files; e better than -50, similarity >75%, and >100 amino acids
+
+3. Compare with Functional Classifications of Prada Ehux lith proteins
