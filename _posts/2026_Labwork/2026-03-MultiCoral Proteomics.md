@@ -110,3 +110,22 @@ PepMap <- find.peptide(data = newtablefrom3, protein_sequence = ProtCol, peptide
 4. Pocillopora tuahiniensis is sister to P. verrucosa but is in a different clade than P. meandrina [Johnston & Burgess 2023 Zootaxa](https://mapress.com/zt/article/view/zootaxa.5369.1.5).
 
 5. Checked NCBI, reefgenomics.org, marinegenomics.oist.jp, and Google Scholar for P. tuahiniensis genome or transcriptome. None found. Must combine P. dam, P. ver, P. acuta, P. grandis, and P. meandrina predicted protein files.
+
+
+### 20260310
+1. Desmophyllum pertusum peptides from MS6036
+
+2. Sort, remove redundant peptides
+
+3. setDT command in R to match peptides to detected proteins
+
+4. merg and find_peptide commands in R to map nr peptides to detected proteins
+
+5. Concatonate and edit
+
+
+### 20260311
+
+1. Pocillopora grandis genome .gff3 output file in Braker3 converted to CDS in GFFreadtool in Galaxy
+
+2. P grandis BUSCO analysis
