@@ -15,25 +15,125 @@
 
 7. From the T. Mass lab by Tal Zaquin: Astrangia poculata, Balanophylia europa, Leptopsammia pruvoti, Lobactis scutaria, Montipora capitata, Oculina patagonica, Phyllangia amouchezii, Pocillopora damicornis, Porites astreoides, Porites lobata
 
+8. Desmophyllum pertusum: Drake, Jeana L., et. al. "[Novel insights into conserved biomineralization mechanisms revealed from a cold-water scleractinian coral skeletal proteome](https://www.biorxiv.org/content/10.64898/2026.03.24.713908v1.abstract)" bioRxiv (2026)/in review.
+
+9. Orbicella annularis: Drake, Jeana L., Julian P. Whitelegge, and David K. Jacobs. "[First sequencing of ancient coral skeletal proteins](https://www.nature.com/articles/s41598-020-75846-4)" Scientific reports 10.1 (2020): 19407.
+
+
 ## Analyses
 
+### 20260403
+
+1. Order Orbicella annularis (modern) peptides based on start location, transpose, concatonate
+
+2. Remove overlaps and make peps consecutive up to 3 x's, remove extra x's at ends. Yields 34 proteins
+
+### 20260402
+
+1. Orbicella annularis (modern), trypsin followed by GluC digestion, separate soluble and insolube runs
+
+2. Peptide-level Mascot files sent from UCLA's Pasarow Lab: 18681, 18688, 18694, 18711
+
+3. Combined peptide data from all 4 files, make peptides non-redundant per protein
+
+4. In R: match peptides to whole proteins (merge and find_peptide) and location of peptides within each protein (setDT)
+   
+
+### 20260317
+
+1. Finish cleaning up Desmophyllum pertusum concatonation - remove overlaps, make peps consecutive up to 3 x's, remove extra x's at ends. Yields 382 proteins.
+
+2. Add peps and sequences to multi-coral proteomics .xlsx and .fasta files.
+   
+
+### 20260311
+
+1. Pocillopora grandis genome .gff3 output file in Braker3 converted to CDS in GFFreadtool in Galaxy
+
+2. P grandis BUSCO analysis
+   
+
+### 20260310
+
+1. Desmophyllum pertusum peptides from MS6036
+
+2. Sort, remove redundant peptides
+
+3. setDT command in R to match peptides to detected proteins
+
+4. merg and find_peptide commands in R to map nr peptides to detected proteins
+
+5. Concatonate and edit
+
+
+### 20260309
+
+1. Convert Pocillopora grandis genome in NCBI [GCA_96402706.2](https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_964027065.2/) .fna file to predicted protein file in Galaxy. No predicted protein file in NCBI.
+
+2. Predicted protein file for model file:
+      a. P. damicornis genome file ([GCF_003804095.1[(https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_003704095.1/), from RSMAS) has too-low scaffold N50 and too-high scaffold L50.
+     b. P. verrucosa genome file ([GCF_036669915.1](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_036669915.1/), State Key Lab for Bioelectronics) has good scaffold N50 and L50. Use this one.
+     c. Pver has only 84 proteins in UniProt; Pdam has 30k proteins in UniProt but is based on RSMAS genome above.
+
+3. Run Pgrand .fna file in Braker3 in Galaxy using Pver NCBI predicted protein file as a guide.
+
+4. Pocillopora tuahiniensis is sister to P. verrucosa but is in a different clade than P. meandrina [Johnston & Burgess 2023 Zootaxa](https://mapress.com/zt/article/view/zootaxa.5369.1.5).
+
+5. Checked NCBI, reefgenomics.org, marinegenomics.oist.jp, and Google Scholar for P. tuahiniensis genome or transcriptome. None found. Must combine P. dam, P. ver, P. acuta, P. grandis, and P. meandrina predicted protein files.
+
+
+### 20260305, 20260306
+
+1. MSA on clusters 0, 6, 8, 11, 12
+
+2. ClustalO online
+
+3. Split clusters 6, 8, 11 into 1-60 aa, 61-120 aa, and >120 aa lengths for alignment
+
+
+### 20260304
+
+1. Merge IntroPro scan to Annotation
+
+2. Map GO terms with default
+
+3. Run Annotation with defaults, e^-6
+
+4. Save output as .b2g and export as. txt
+
+5. Reblast missing long Pdam sequence - still fails. Blast-p in NCBI. Had GO terms from first Blast2GO run.
+
+
 ### 20260303
-1. Make SOM peptides non-redundant (nr) tabl of accession numbers and peptides only
 
-2. Make All-SOM Proteins file
+1. 500 sequences fuly ran through blast-p in Blast2GO. 1 sequence didn't run = 9298 aa long
 
-3. Merge nr peptides and all proteins files in R
+2. Run Interpro scan
+   
+3. 1. Make SOM peptides non-redundant (nr) tabl of accession numbers and peptides only
+
+4. Make All-SOM Proteins file
+
+5. Merge nr peptides and all proteins files in R
 newtable <- merge(DFprot, DRpep, by.x = c(ProtAccessCol), by.y = c(PepAccessCol), all = TRUE)
 
-4. Map peptides to proteins in R
+6. Map peptides to proteins in R
 PepMap <- find.peptide(data = newtablefrom3, protein_sequence = ProtCol, peptide_sequence = PepCol)
 
-5. Remove rows where peptides not mapped
+7. Remove rows where peptides not mapped
 
-6. Write excel equations for consecutive peptides, 1 aa apart, 2 aa's apart, 3 aa's apart
+8. Write excel equations for consecutive peptides, 1 aa apart, 2 aa's apart, 3 aa's apart
 
 
-### 20260326
+### 20260302
+
+1. Pull all contatonated pseudoproteins (with x's) that cluster to at least 2 sequences. Yields 37 clusters of 501 sequences.
+
+2. Blast2GO: blastp_fast, nr, no filter, e^-10
+
+
+### 20260226
+
 1. Order peptides within proteins
 
 2. Write excel equation to concatonate with 10 x's between non-consecutive peptides
@@ -63,69 +163,3 @@ PepMap <- find.peptide(data = newtablefrom3, protein_sequence = ProtCol, peptide
 14. 50% works with -n = 3
 
 15. 30%, 40% fail even with -n = 2
-
-
-### 20260302
-1. Pull all contatonated pseudoproteins (with x's) that cluster to at least 2 sequences. Yields 37 clusters of 501 sequences.
-
-2. Blast2GO: blastp_fast, nr, no filter, e^-10
-
-
-### 20260303
-1. 500 sequences fuly ran through blast-p in Blast2GO. 1 sequence didn't run = 9298 aa long
-
-2. Run Interpro scan
-
-
-### 20260304
-1. Merge IntroPro scan to Annotation
-
-2. Map GO terms with default
-
-3. Run Annotation with defaults, e^-6
-
-4. Save output as .b2g and export as. txt
-
-5. Reblast missing long Pdam sequence - still fails. Blast-p in NCBI. Had GO terms from first Blast2GO run.
-
-
-### 20260305, 20260306
-1. MSA on clusters 0, 6, 8, 11, 12
-
-2. ClustalO online
-
-3. Split clusters 6, 8, 11 into 1-60 aa, 61-120 aa, and >120 aa lengths for alignment
-
-
-### 20260309
-1. Convert Pocillopora grandis genome in NCBI [GCA_96402706.2](https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_964027065.2/) .fna file to predicted protein file in Galaxy. No predicted protein file in NCBI.
-
-2. Predicted protein file for model file:
-      a. P. damicornis genome file ([GCF_003804095.1[(https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_003704095.1/), from RSMAS) has too-low scaffold N50 and too-high scaffold L50.
-     b. P. verrucosa genome file ([GCF_036669915.1](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_036669915.1/), State Key Lab for Bioelectronics) has good scaffold N50 and L50. Use this one.
-     c. Pver has only 84 proteins in UniProt; Pdam has 30k proteins in UniProt but is based on RSMAS genome above.
-
-3. Run Pgrand .fna file in Braker3 in Galaxy using Pver NCBI predicted protein file as a guide.
-
-4. Pocillopora tuahiniensis is sister to P. verrucosa but is in a different clade than P. meandrina [Johnston & Burgess 2023 Zootaxa](https://mapress.com/zt/article/view/zootaxa.5369.1.5).
-
-5. Checked NCBI, reefgenomics.org, marinegenomics.oist.jp, and Google Scholar for P. tuahiniensis genome or transcriptome. None found. Must combine P. dam, P. ver, P. acuta, P. grandis, and P. meandrina predicted protein files.
-
-
-### 20260310
-1. Desmophyllum pertusum peptides from MS6036
-
-2. Sort, remove redundant peptides
-
-3. setDT command in R to match peptides to detected proteins
-
-4. merg and find_peptide commands in R to map nr peptides to detected proteins
-
-5. Concatonate and edit
-
-
-### 20260311
-
-1. Pocillopora grandis genome .gff3 output file in Braker3 converted to CDS in GFFreadtool in Galaxy
-
-2. P grandis BUSCO analysis
