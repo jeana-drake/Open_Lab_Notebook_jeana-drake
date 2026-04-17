@@ -22,6 +22,16 @@
 
 ## Analyses
 
+### 20260410 to 20260414
+
+1. Check multi-coral proteomics SOMP lists for likely human contaminants
+
+2. Astrangia poculata, Balanophyllia europa, Leptopsammia provuti, Lobactis scutaria, Montipora capitata, Oculina patagonica, Pocillopora damicornis, Porites astreoides, Porites lobata
+
+3. Blast2GO against NCBI_nr primates.
+
+4. Check alignments of high scoring Blast2GO matches in NCBI blastp.
+
 ### 20260403
 
 1. Order Orbicella annularis (modern) peptides based on start location, transpose, concatonate
