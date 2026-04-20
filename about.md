@@ -8,6 +8,10 @@ permalink: /about/
 
 [BECORAL Website](https://pradalabrutgers.weebly.com/)  
 
+<p align="center">
+  <img src="https://github.com/BECORAL/Open_Lab_Notebook_BECORAL/blob/master/images/Benthos_small-1.png" />
+</p>
+
 ### Contact
 
 Benthic ECOlogy ReseArch Lab 
