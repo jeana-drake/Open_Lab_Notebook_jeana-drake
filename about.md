@@ -12,6 +12,13 @@ permalink: /about/
   <img src="https://github.com/BECORAL/Open_Lab_Notebook_BECORAL/blob/master/images/Benthos_small-1.png" />
 </p>
 
+<p align="center">
+  <img src="https://github.com/talimass/Talimass_Lab_Notebook_Mass_Lab/blob/master/images/table%20with%20chambers.jpg?raw=true" />
+</p>
+
+![Side view](https://github.com/talimass/Talimass_Lab_Notebook_Mass_Lab/blob/master/images/table%20with%20chambers.jpg?raw=true)
+
+![Side view](https://github.com/BECORAL/Open_Lab_Notebook_BECORAL/blob/master/images/Benthos_small-1.png)
 ### Contact
 
 Benthic ECOlogy ReseArch Lab 
