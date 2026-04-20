@@ -39,19 +39,19 @@
 4. Neighbor-joining tree (1000 bootstraps) on 7 amino acids in PAST5
 
 <p align="center">
-  <img src="https://github.com/jeana-drake/Open_Lab_Notebook_jeana-drake/blob/master/images/Stonycoral_7AA_NJtree.png" />
+  <img src="https://github.com/jeana-drake/Open_Lab_Notebook_jeana-drake/blob/master/images/Stonycoral_7AA_NJtree.png?raw=true" />
 </p>
 
 5. nMDS on 7 amino acids in PAST5
 
 <p align="center">
-  <img src="https://github.com/jeana-drake/Open_Lab_Notebook_jeana-drake/blob/master/images/Stonycoral_7AA_nMDS.png" />
+  <img src="https://github.com/jeana-drake/Open_Lab_Notebook_jeana-drake/blob/master/images/Stonycoral_7AA_nMDS.png?raw=true" />
 </p>
 
 6. %DE Boxplot in PAST5
 
 <p align="center">
-  <img src="https://github.com/jeana-drake/Open_Lab_Notebook_jeana-drake/blob/master/images/Stonycoral_7AA_boxplot.png" />
+  <img src="https://github.com/jeana-drake/Open_Lab_Notebook_jeana-drake/blob/master/images/Stonycoral_7AA_boxplot.png?raw=true" />
 </p>
 
 7. Mann-Whitney test on %DE in PAST5, 1000 permutations
