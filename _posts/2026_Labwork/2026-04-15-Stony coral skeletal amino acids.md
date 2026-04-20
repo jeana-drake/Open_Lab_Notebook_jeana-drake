@@ -36,16 +36,16 @@
   
 3. Young 1971 %D+E consistently lower than other studies. Data removed.
 
-4. Neighbor-joining tree (1000 bootstraps) in PAST5
+4. Neighbor-joining tree (1000 bootstraps) on 7 amino acids in PAST5
 
 <p align="center">
   <img src="https://github.com/jeana-drake/Open_Lab_Notebook_jeana-drake/blob/master/images/Stonycoral_7AA_NJtree.png" />
 </p>
 
-5. nMDS in PAST5
+5. nMDS on 7 amino acids in PAST5
 
 <p align="center">
-  <img src="https://github.com/BECORAL/Open_Lab_Notebook_BECORAL/blob/master/images/Benthos_small-1.png" />
+  <img src="https://github.com/jeana-drake/Open_Lab_Notebook_jeana-drake/blob/master/images/Stonycoral_7AA_nMDS.png" />
 </p>
 
 6. %DE Boxplot in PAST5
@@ -54,7 +54,7 @@
   <img src="https://github.com/jeana-drake/Open_Lab_Notebook_jeana-drake/blob/master/images/Stonycoral_7AA_boxplot.png" />
 </p>
 
-7. Mann-Whitney test in PAST5, 1000 permutations
+7. Mann-Whitney test on %DE in PAST5, 1000 permutations
 Complex	Robust
 N:	20	N:	32
 Mean rank:	12.615	Mean rank:	13.885
