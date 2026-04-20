@@ -35,3 +35,38 @@
 2. 7 amino acids used across all studies: Ala, Asx, Glx, Ile, Leu, Phe, Val.
   
 3. Young 1971 %D+E consistently lower than other studies. Data removed.
+
+4. Neighbor-joining tree (1000 bootstraps) in PAST5
+
+<p align="center">
+  <img src="https://github.com/BECORAL/Open_Lab_Notebook_BECORAL/blob/master/images/Benthos_small-1.png" />
+</p>
+
+5. nMDS in PAST5
+
+<p align="center">
+  <img src="https://github.com/BECORAL/Open_Lab_Notebook_BECORAL/blob/master/images/Benthos_small-1.png" />
+</p>
+
+6. %DE Boxplot in PAST5
+
+<p align="center">
+  <img src="https://github.com/BECORAL/Open_Lab_Notebook_BECORAL/blob/master/images/Benthos_small-1.png" />
+</p>
+
+7. Mann-Whitney test in PAST5, 1000 permutations
+Complex	Robust
+N:	20	N:	32
+Mean rank:	12.615	Mean rank:	13.885
+
+Mann-Whitney test for stochastic equality
+U :	194
+z :	2.3605	p (equal):	0.01825
+Monte Carlo permutation:	p (equal):	0.0177
+
+Vargha-Delaney A effect size:	0.6969 (medium)
+
+Brunner-Munzel test for stochastic equality
+phat :	0.30313	BM :	-2.4252
+df :	30.488	p (equal):	0.021426
+Monte Carlo permutation:	p (equal):	0.0232
