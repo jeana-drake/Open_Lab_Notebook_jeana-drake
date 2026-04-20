@@ -51,7 +51,7 @@
 6. %DE Boxplot in PAST5
 
 <p align="center">
-  <img src="https://github.com/BECORAL/Open_Lab_Notebook_BECORAL/blob/master/images/Benthos_small-1.png" />
+  <img src="https://github.com/jeana-drake/Open_Lab_Notebook_jeana-drake/blob/master/images/Stonycoral_7AA_boxplot.png" />
 </p>
 
 7. Mann-Whitney test in PAST5, 1000 permutations
