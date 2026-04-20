@@ -39,7 +39,7 @@
 4. Neighbor-joining tree (1000 bootstraps) in PAST5
 
 <p align="center">
-  <img src="https://github.com/BECORAL/Open_Lab_Notebook_BECORAL/blob/master/images/Benthos_small-1.png" />
+  <img src="https://github.com/jeana-drake/Open_Lab_Notebook_jeana-drake/blob/master/images/Stonycoral_7AA_NJtree.png" />
 </p>
 
 5. nMDS in PAST5
