@@ -22,8 +22,57 @@
 
 ## Analyses
 
-### 20260410 to 20260414
+### 20260423 to 20260427
 
+1. New corals sent by Hollie Putnam: Pocillopora tuahiniensis, Pocillopora meandrina, Pocillopora verrucosa, Pocillopora grandis, Pocillopora acuta, Porites compressa, Acropora pulchra, Pocillopora compressa, Cladocora caespitosa
+
+2. Run via Data Independent Acquisition protocol at CABM Biological Mass Spectrometry Facility.
+
+3. Pivot Table filters: Contaminant, EG Pep<0.01, EG Qvalue<0.01
+
+4. Pivot Table column: R.Condition
+
+5. Pivot Table rows: PG.ProteinGroups (lead), PEP.StrippedSequence, PEP.RunEvidenceCount, ProteinName (added to full data worksheet; is copy of PG.ProteinGroups)
+
+6. Add Sort worksheet. Copy/PasteSpecial -> Values of PivotTable without GrandTotal.
+
+7. Sort by ProteinNames and then by PEP.RunEvidenceCount. Delete rows with 'peptide sequenceTotal' and PEPrunevidencecount 'value Total'. Delete rows with contaminants mixed with target hits. Leaves rows with peptide sequence, run evidence count, protein name, PEP.Quantity (as R.Condition). For test file 'MS6747_HT_DIA_Spectronaut_Protein_ID_34 - CC3_PTM.xlsx' yields target-only 6749 peptide hits for Cladocora caespitosa.
+
+8. Add column 2PLUSPeps1 as E=IF(D2=D3, "SAME", "different"). Copy/PasteSpecial -> Values. SAME means that present row has same Protein ID as row below it.
+
+9. Add column 2PLUSPeps2 as F=IF(D2=D1, "SAME", "different"). Copy/PasteSpecial -> Values. SAME means that present row has same Protein ID as row above it.
+
+10. Add column SinglePep as G=IF(AND(E="different", "different"), "SINGLEPEP", "NA". Copy/PasteSpecial -> Values. SINGLEPEP means that the Protein ID in the present row has only a single peptide detected.
+
+11. Add column SinglePep5 as =IF(AND(G="SINGLEPEP", B>1), "SINGLEPEP2", "no". Copy/PasteSpecial -> Values. SINGLEPEP2 means that the Protein ID in the present row has a single peptide detected at least 2 times.
+
+13. Add column KEEP as =IF(OR(G="NA", H="SINGLEPEP2"), "KEEP", "-". Copy/PasteSpecial -> Values. KEEP means that the Protein ID in the present row has multiple peptides detected or a single peptide detected at least 2 times.
+
+14. Sort worksheet by Keep (Z to A), then ProteinNames (A to Z), then PEP.RunEvidenceCount (decreasing).
+
+15. Add Keep worksheet. Copy/Paste all sorted rows with KEEP designation. For test file 'MS6747_HT_DIA_Spectronaut_Protein_ID_34 - CC3_PTM.xlsx' yields target-only 6242 peptide hits with multiple peps per protein or at least two spectra for single-peptide protein hits for Cladocora caespitosa.
+
+16. Add cell with J=COUNTIF(E2:E10000, "different"). For file 'MS6747_HT_DIA_Spectronaut_Protein_ID_34 - CC3_PTM.xlsx' yields 865 proteins detected with two individual peptides or one peptides with at least 2 spectra above cutoffs.
+
+17. Repeat for MS6747_HT_DIA_Spectronaut_Protein_ID_18-20 - Pocillopora grandis_PTM.xlsx. Yields 4289 target-only peptides.
+
+18. If species has multiple replicates, add the following steps:
+
+19. After 2PLUSPeps1 and 2PLUSPeps2, add column of SameRun as =IF(OR(F="SAME", G="SAME"),"SAMERUN","singlepep"). SAMERUN means there are 2+ unique peptides in the same replicate run. Copy/PasteSpecial -> Values. 
+
+20. After SameRun, add column of CrossRun as =IF(AND(D>1, E>1),"CROSSRUN","singlerun"). If triplicate samples were processed and run individually for the same species, add a column of 2OF3 as =IF((D>1, E>1, F>1)>=2,"CROSSRUN","singlerun"). CROSSRUN means the peptide was detected in at least two replicate runs. Copy/PasteSpecial -> Values. 
+
+21. Add column of SingleRunSinglePep as =IF(AND(SameRun="singlepep", B>1),"SINGLERUN2","no". Copy/PasteSpecial -> Values. SINGLERUN2 means the Protein ID in this row has one peptide detected at least 2 times in the same replicate.
+
+22. Add column of KeepSingle as =IF(OR(SingleRunSinglePep2="SINGLERUN2", AND(F="different", G="different", CrossRun="different")),"KEEP","-"). KEEP means the Protein ID in this row has a peptide that was *either* detected at least twice in the same run or across at least two replicates.
+
+23. Add column of KeepFinal as =IF(OR(SameRun="SAMERUN", KeepSingle="KEEP"),"KEEP","-"). KEEP means the Protein ID in this row has multiple unique peptides detected in one replicate run, only one peptide detected in only one run but detected at least twice, or only peptide detected in each replicate run but detected in at least 2 runs.
+
+24. Copy/PasteSpecial -> Values for all remaining formula rows.
+
+25. Sort by the KeepFinal column for KEEP, then by ProteinName, then by PEP.RunEvidenceCount.
+
+### 20260410 to 2026041
 1. Check multi-coral proteomics SOMP lists for likely human contaminants
 
 2. Astrangia poculata, Balanophyllia europa, Leptopsammia provuti, Lobactis scutaria, Montipora capitata, Oculina patagonica, Pocillopora damicornis, Porites astreoides, Porites lobata
