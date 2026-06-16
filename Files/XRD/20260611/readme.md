@@ -1,1 +1,1 @@
-See post (2026-06-11-Desmophyllum dianthus XRD.md)[https://github.com/jeana-drake/Open_Lab_Notebook_jeana-drake/blob/45dd460a51a0096eb104c70e3922f79ca6501e80/_posts/2026_Labwork/2026-06-11-Desmophyllum%20dianthus%20XRD.md] in _posts
+See post [2026-06-11-Desmophyllum dianthus XRD.md](https://github.com/jeana-drake/Open_Lab_Notebook_jeana-drake/blob/45dd460a51a0096eb104c70e3922f79ca6501e80/_posts/2026_Labwork/2026-06-11-Desmophyllum%20dianthus%20XRD.md) in _posts
