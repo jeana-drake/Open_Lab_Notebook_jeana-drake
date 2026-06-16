@@ -1,8 +1,20 @@
 # Desmophyllum dianthus Mineralogy Determination by X-ray Diffraction
 
-Instrument: Bruker D2 Phaser LE-T with zero background diffraction plate
+## Instrument
 
-Samples: From Hudson Canyon transect collected on NOAA Cruise XXX
+Bruker D2 Phaser LE-T with zero background diffraction plate, Rutgers University, [Department of Chemistry and Biochemistry](https://chem.rutgers.edu/facilities/facilities-x-ray)
+
+
+## Contacts
+
+Adrian Castillo, State University of New York College of Environmental Science and Forestry (SUNY ESF), graduate student
+
+Dave Packer, National Oceanographic and Atmospheric Administration Northeast Fisheries Science Center (NOAA NEFSC), marine ecologist, expedition co-lead
+
+
+## Samples
+
+Sampled from the Hudson Canyon transect collected on NOAA Cruise [NF2510](https://www.fisheries.noaa.gov/new-england-mid-atlantic/science-data/2024-fall-and-2025-winter-northeast-ecosystem-monitoring#the-2025-winter-eco-mini-small-to-bigelow%C2%A0) [Livestream](https://www.youtube.com/watch?v=aJvgUmNmb3s) from expedition ROV during dives along this transect.
 
 1. D. dianthus 03 brown surface layer, milled off with dremel
 
