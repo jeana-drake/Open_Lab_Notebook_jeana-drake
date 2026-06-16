@@ -31,3 +31,7 @@ Sampled from the Hudson Canyon transect collected on NOAA Cruise [NF2510](https:
 7. D. dianthus 11, bulk powder (<160 um)
 
 8. D. dianthus 12, bulk powder (<160 um)
+
+## Data
+
+Uploaded to Files -> XRD -> [20260611](https://github.com/jeana-drake/Open_Lab_Notebook_jeana-drake/tree/77123a01e504297c091c18ce44991c81ac624f1b/Files/XRD/20260611)
